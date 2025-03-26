@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  elevator-v4
+
+  SAM Template for elevator-v4
+
+
+Globals:
+  Function:
+    Timeout: 3
+
+Resources:
+  ElevatorFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: elevator/
+      Handler: app.lambda_handler
+      Runtime: python3.13
+      Architectures:
+        - x86_64
+      Events:
+        Elevator:
+          Type: Api
+          Properties:
+            Path: /calc
+            Method: post
+
+Outputs:
+  ElevatorApi:
+    Description: "API Gateway endpoint URL for Prod stage for Elevator function"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/calc/"
+  ElevatorFunction:
+    Description: "Elevator Lambda Function ARN"
+    Value: !GetAtt ElevatorFunction.Arn
+  ElevatorFunctionIamRole:
+    Description: "Implicit IAM Role created for Elevator function"
+    Value: !GetAtt ElevatorFunctionRole.Arn

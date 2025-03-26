@@ -76,6 +76,17 @@ I started working on this at like 10pm Monday night. The plan was to do a bit of
 <br>
 
 
+__elevator_v4__ <br>
+V4 is a work in progress. Since the role I applied for is a full stack / web dev position, I figured I might try to get something quick and dirty deployed. Since I deleted my old AWS account last year (because I was burning money on databases I wasn't actively using) I created a new AWS account (root level), created an IAM account for dev work, installed `aws-sam-cli`, spun up a quick hello-world app, and got it deployed.
+
+POST Endpoint here: https://1kmz3rup3m.execute-api.us-east-2.amazonaws.com/Prod/calc/
+
+As of 1:18am on Wednesday morning, all it does it return 'hello world', but since the assignment is due Wednesday morning (to give the team 48hrs to review), that's where I'm going to leave it for now. If I get time before Friday, I may update it to accept the elevator start and list of floors to visit in JSON format and return the travel time info. If I have a bunch of extra time, I may try to throw a very basic front-end on it all, but that is unlikely.
+
+## Summary
+I hope I met the spirit / intent of the assignment and hopefully we have something to talk about during the interview on Friday. Thanks for taking the time to read this and I look forward to talking to you soon!
+
+
 
 
 

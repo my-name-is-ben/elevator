@@ -3,6 +3,12 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# AWS SAM stuff
+.aws-sam/
+
+# Mac stuff
+.DS_Store
+
 # C extensions
 *.so
 
