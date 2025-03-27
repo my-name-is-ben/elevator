@@ -84,7 +84,20 @@ POST Endpoint here: https://1kmz3rup3m.execute-api.us-east-2.amazonaws.com/Prod/
 As of 1:18am on Wednesday morning, all it does it return 'hello world', but since the assignment is due Wednesday morning (to give the team 48hrs to review), that's where I'm going to leave it for now. If I get time before Friday, I may update it to accept the elevator start and list of floors to visit in JSON format and return the travel time info. If I have a bunch of extra time, I may try to throw a very basic front-end on it all, but that is unlikely.
 
 ___UPDATE 12:02am 3/27___ <br>
-So I managed to add some more functionality and deployed the changes. The lambda now will handle http requests, calculate the `total_travel_time` and `floors_visited`. I also included some basic logging in the lambda, which can be viewed through CloudWatch (see screenshots below). I also added a very basic test script that allows local testing without having to deploy to dev/prod. I tested with Postman (see screenshots below). I also included a screenshot of the changes being deployed below.
+So I managed to add some more functionality and deployed the changes. The lambda now will handle http requests, calculate the `total_travel_time` and `floors_visited`. I also included some basic logging in the lambda, which can be viewed through CloudWatch (see screenshots below). I also added a very basic test script that allows local testing without having to deploy to dev/prod. It can be run by running `python local_tests.py`.I also tested the deployed version with Postman (see screenshots below). I also included a screenshot of the changes being deployed below.
+
+POST request format:
+
+`https://1kmz3rup3m.execute-api.us-east-2.amazonaws.com/Prod/calc/`
+```
+{
+  "elevator_start": 23,
+  "floors": [1,2,3,4,5]
+}
+```
+elevator_start: `int`
+<br>
+floors: `list of ints`
 
 ## Summary
 I hope I met the spirit / intent of the assignment and hopefully we have something to talk about during the interview on Friday. Thanks for taking the time to read this and I look forward to talking to you soon!
